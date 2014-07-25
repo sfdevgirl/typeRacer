@@ -15,6 +15,7 @@ font-size: 20px;
 color: #222;
 padding: 10px;
 line-height: 150%;
+background-color: #D3D3D3;
 
 
 
@@ -49,11 +50,15 @@ padding: 10px;
 	font-weight: bold;
 }
 
-
+ a{
+	text-decoration: none;
+	color: red;
+}
 .container > p {
   font-family: 'Handlee', cursive;
   font-size: 20px;
-  float: left;
+  float: right;
+  padding-right: 10px;
 
 }
 body::after {
@@ -80,9 +85,11 @@ body::after {
 .jumbotron > .container > h1 {
   color: #333;
   font-family: 'Special Elite', cursive;
-  font-size: 50px;
+  font-size: 65px;
   display: inline;
   float: left;
+  margin: 0;
+  margin-bottom: 20px;
   
 }
 
@@ -98,22 +105,8 @@ body::after {
 
 .main > div {
   background: #D3D3D3;
-  border-radius: 10px;
-}
+  border-radius: 10px;}
 
-.error {
-  color: red;
-  text-decoration: underline;
-}
-
-.correct {
-  color: gray;
-}
-
-.green {
-  color: green;
-  text-decoration: underline;
-}
 
 footer{
  position: fixed;
@@ -121,48 +114,31 @@ footer{
     right: 0;
  width:100%;
   color:#3071a9;
-  border-top: 2px solid #222 ;
+  border-top: 2px solid #D3D3D3 ;
   margin:0px;
-  background:#222;
+  background:#D3D3D3;
   font-family: 'Handlee', cursive;
-  padding-left:10px;
+  padding:10px;
   display:inline;
 }
 
+footer > .me {
 
+float: right;
+
+}
 
 footer > p{
 font-size: 15px;
-  text-align:left;
-  padding-left:10px;
- }
-
+  float:left;
+  padding-left: 20px;
   
-}
-ul {
-   list-style-type:none;
-  display: inline;
-}
+ }
+footer  a{
+	color:#333;
+	
+	font-size: 16px;
 
-
-li {
-  float:right;
-  padding:5px;
-   list-style-type:none;
-}
-
-li:hover{
-  position:relative;
-  bottom:5px; 
-}
-
-
-.color li{
-
-margin-left: 0;
-text-align:right;
- list-style-type:none;
- text-decoration:none;
-}
 
 }
+  

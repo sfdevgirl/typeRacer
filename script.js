@@ -1,47 +1,56 @@
-$(document).ready(function(){
+$(document).ready(function() {
+       
+       var stimestamp, etimestamp;
+       var booboos = 0;
 
-	var txt = $("#user-input");
-	var stimestamp, etimestamp;
-	var booboos = 0;
-	var textToType = $("#text-to-type").html();
-	var txt = $("#user-input");
 
-	function displayStatistics(){
+       var txtToType = $('#text-to-type');
+       var txt = $('#user-input');
 
-		// calculate the number of seconds passed
+       
+       var wordSpans = [];
+       var str = "There is a place in the heart that will never be filled, a space, and even during the best moments and the greatest times we will know it, we will know it more than ever. There is a place in the heart that will never be filled, and we will wait, and wait, in that space.";
+       var words = str.split(" ");
 
-		// calculate the number of mistypes total
 
-		// calculate a %age of the number of mistypes vs the number of characters typed
+       for(var i = 0; i < words.length; i++) {
 
-		// display calcu
 
-	}
+wordSpans.push('<span>' + words[i] + '</span>');
+       }
+       
+       var joinedWordSpans = wordSpans.join(" ");
+       $('#text-to-type').html(joinedWordSpans);  
+       
 
-	txt.on("keyup", function(evt){
-		if(!stimestamp)
-			stimestamp = new Date().getTime();
+       function displayStatistics() {
+               //DO STUFF
+       }
 
-		console.log (stimestamp);
-		
-		var input = this.value;
 
-		for( var i=0; i<input.length; i++){
-		
-			if(textToType[i] != input[i]){
-				booboos++;
-				return false;
-			}
-		}
+       txt.on("keydown", function(ext){ 
+               if(!stimestamp)
+                       stimestamp=new Date().getTime();
 
-		if( textToType.length == input.length ){
-			textToType.css('disabled', true);
-			etimestamp = new Date().getTime();
+               var inputTxt = this.value;
+               
+               for(var i=0; i<inputTxt.length; i++) {
+                       if(txtToType[i] != inputTxt[i]) {
 
-			displayStatistics();
-		}
-	});
 
-	console.log( "application initialized");
+                                booboos++;
+                              false;
+                       }
+               }
+               
+                       
+               if(txtToType.length == inputTxt.length) {
+                       txtToType.css("disabled", true);
+                       etimestamp = new Date().getTime();
+                       console.log("disabled")
 
+                       displayStatistics();
+               }
+               //console.log( booboos );
+       });
 });
